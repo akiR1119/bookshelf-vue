@@ -1,0 +1,5 @@
+.shelf-index
+  .shelf-name
+    = shelf[:shelf_name]
+  .shelf-link
+    = link_to "詳細", user_shelf_path(current_user.id, shelf[:id])

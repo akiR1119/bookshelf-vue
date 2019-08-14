@@ -1,0 +1,14 @@
+%h2 本棚情報登録
+= form_with model: [@user, @shelf] do |f|
+  .forms-wrapper
+    .form-block
+      %p 本棚名
+      = f.text_field :shelf_name
+    .form-block
+      %p 写真
+      = f.file_field :shelf_img
+    .form-block
+      %p 説明
+      = f.text_area :description
+    .form-block
+      = f.submit :submit

@@ -1,0 +1,4 @@
+%h2 本棚一覧
+.shelves_wrapper
+  - @shelves.each do |shelf|
+    = render partial: "shelf", locals: {shelf: shelf}

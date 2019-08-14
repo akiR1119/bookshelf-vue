@@ -1,0 +1,4 @@
+-# 本棚詳細情報を表示。
+.wrapper
+  - @items.each do |item|
+    = render partial: "item", locals: {item: item}

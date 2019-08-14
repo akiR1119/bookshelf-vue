@@ -1,0 +1,44 @@
+%h2 アイテム情報登録
+= form_with model: [@user, @item] do |f|
+  .forms-wrapper
+    %span.input-type 基礎情報
+    .form-block
+      %p 種別
+      = f.label :item_type do
+        %p 本
+        = f.radio_button :item_type, 0
+      = f.label :type do
+        %p CD・DVD・BD
+        = f.radio_button :item_type, 1
+      = f.label :type do
+        %p その他
+        = f.radio_button :item_type, 2
+    .form-block
+      %p タイトル
+      = f.text_field :item_name
+    .form-block
+      %p 著者・アーティスト
+      = f.text_field :author
+    .form-block
+      %p 配置本棚
+      = f.select :shelf_id, @shelves
+    %span.input-type 任意情報
+    .form-block
+      %p ジャンル
+      = f.text_field :genre
+    .form-block
+      = f.label :has_read do
+        %p 未読
+        = f.radio_button :has_read, false
+      = f.label :has_read do
+        %p 既読
+        = f.radio_button :has_read, true
+    .form-block
+      = f.label :lend? do
+        %p なし
+        = f.radio_button :lend?, false
+      = f.label :lend? do
+        %p あり
+        = f.radio_button :lend?, true
+    .form-block
+      = f.submit :submit
