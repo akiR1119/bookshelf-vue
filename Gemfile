@@ -69,3 +69,17 @@ gem "haml-rails", "~> 2.0"
 
 # pry-rails
 gem "pry-rails"
+
+# font-awesome
+gem 'font-awesome-sass', '~> 5.9.0'
+
+# for Bootstrap
+gem 'bootstrap', '~> 4.3.1'
+
+# for jQuery (it is necessary to use Bootstrap)
+gem 'jquery-rails'
+
+# for upload images
+gem 'carrierwave', '~> 2.0'
+gem 'fog-aws'
+gem 'mini_magick'

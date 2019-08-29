@@ -1,5 +1,8 @@
-.shelf-index
-  .shelf-name
+.shelf-index.card.p-2.m-2.w-25
+  .shelf-name.card-title
     = shelf[:shelf_name]
-  .shelf-link
+  .shelf-img.card-img
+    - if shelf.shelf_img.url
+      = image_tag shelf.shelf_img.url
+  .shelf-link.card-link
     = link_to "詳細", user_shelf_path(current_user.id, shelf[:id])

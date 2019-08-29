@@ -16,7 +16,7 @@ class ShelvesController < ApplicationController
 
   def show
     @shelf = Shelf.find(params[:id])
-    @items = @shelf.items
+    @items = Shelf.find(params[:id]).items
   end
 
   private
@@ -30,6 +30,6 @@ class ShelvesController < ApplicationController
   end
 
   def user_setting
-    @user = User.new(id: 1)
+    @user = User.new(id: current_user.id)
   end
 end

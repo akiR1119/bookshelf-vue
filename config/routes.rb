@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :new, :create, :show, :edit]
     resources :shelves, only: [:index, :new, :create, :show, :edit]
   end
+  # get 'users/:id/items/search', to: 'users#show'
 end

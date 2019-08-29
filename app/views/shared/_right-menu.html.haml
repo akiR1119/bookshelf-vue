@@ -1,0 +1,14 @@
+.right-menu.float-right.card.p-2.mr-3
+  .search-window
+    -# = form_with url: 
+  .registration-menu
+    .shelf
+      = link_to new_user_shelf_path(current_user.id) do
+        .shelf-registration.btn.btn-primary
+          新規本棚登録
+          = icon('fas', 'receipt')
+    .item
+      = link_to new_user_item_path(current_user.id) do
+        .item-registration.btn.btn-primary.mt-1
+          新規アイテム登録
+          = icon('fas', 'book')

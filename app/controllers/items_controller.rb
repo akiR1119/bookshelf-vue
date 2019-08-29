@@ -15,6 +15,10 @@ class ItemsController < ApplicationController
     Item.create(item_params)
   end
 
+  def search
+    # @ItemSearchResult = Item.where()
+  end
+
   private
 
   def item_params

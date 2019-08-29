@@ -1,4 +1,10 @@
 -# 本棚詳細情報を表示。
-.wrapper
-  - @items.each do |item|
-    = render partial: "item", locals: {item: item}
+.wrapper.w-75.mx-auto.mt-2
+  .shelf-name
+    %h2
+      = "「#{@shelf.shelf_name}」が所蔵するアイテム一覧"
+  - if @items.length == 0
+    %p アイテムがありません
+  - else
+    - @items.each do |item|
+      = render partial: "item", locals: {item: item}
