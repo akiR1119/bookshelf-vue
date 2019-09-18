@@ -2,5 +2,4 @@
   %h2
     = "#{current_user.name}の本棚一覧"
   .shelves_wrapper.w-75.mx-auto.mt-2.d-flex.align-content-start.flex-wrap
-    - @shelves.each do |shelf|
-      = render partial: "shelf", locals: {shelf: shelf}
+    = render @shelves

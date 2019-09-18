@@ -6,5 +6,4 @@
   - if @items.length == 0
     %p アイテムがありません
   - else
-    - @items.each do |item|
-      = render partial: "item", locals: {item: item}
+    = render @items
