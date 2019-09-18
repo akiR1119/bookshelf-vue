@@ -1,0 +1,9 @@
+.item_index.card.p-2.m-2
+  .item_name.card-title
+    = item[0][:item_name]
+  .item_author.card-subtitle.mb-2.text-muted
+    = item[0][:author]
+  .item_shelf.card-link
+    %p
+      所属  ▶︎
+      = item[0].shelf.shelf_name
