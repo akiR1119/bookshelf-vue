@@ -1,8 +1,0 @@
-.item_index.card.p-2.m-2
-  .item_name.card-title
-    = item[:item_name]
-  .item_author.card-subtitle.mb-2.text-muted
-    = item[:author]
-  - if controller.action_name != "show"
-    .item_shelf.card-link
-      = item.shelf.shelf_name
