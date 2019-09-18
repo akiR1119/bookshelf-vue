@@ -1,0 +1,8 @@
+.wrapper.w-75.mx-auto.mt-2
+  .shelf-name
+    %h2
+      = "検索結果"
+  - if @result.length == 0
+    %p アイテムがありません
+  - else
+    = render partial: "item", locals: {item: @result}

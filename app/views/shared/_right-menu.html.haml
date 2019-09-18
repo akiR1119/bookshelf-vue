@@ -1,6 +1,4 @@
 .right-menu.float-right.card.p-2.mr-3
-  .search-window
-    -# = form_with url: 
   .registration-menu
     .shelf
       = link_to new_user_shelf_path(current_user.id) do
@@ -12,3 +10,8 @@
         .item-registration.btn.btn-primary.mt-1
           新規アイテム登録
           = icon('fas', 'book')
+    .search.mt-2
+      = form_with url: "/users/#{current_user.id}/item_search", local: true, method: :get do |f|
+        = f.text_field :keyword, placeholder: "本を探す"
+        = f.button :submit, type: :submit, class: ["btn", "btn-primary"] do
+          %i.fa.fa-search
