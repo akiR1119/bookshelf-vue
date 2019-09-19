@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
-  # before_action :user_setting, only: [:new, :create]
-  #テスト時の記述。ユーザーログイン機能ができたらcurrent_userでidを取得する。
+  before_action :user_setting, only: [:new, :create]
   
   def index
+    @allitems = Item.where(user_id: current_user.id)
   end
 
   def new
@@ -26,6 +26,6 @@ class ItemsController < ApplicationController
   end
 
   def user_setting
-    @user = User.new(id: 1)
+    @user = User.new(id: current_user.id)
   end
 end
