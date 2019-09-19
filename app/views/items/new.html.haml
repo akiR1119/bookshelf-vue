@@ -1,44 +1,59 @@
-%h2 アイテム情報登録
-= form_with model: [@user, @item] do |f|
-  .forms-wrapper
-    %span.input-type 基礎情報
-    .form-block
-      %p 種別
-      = f.label :item_type do
-        %p 本
-        = f.radio_button :item_type, 0
-      = f.label :type do
-        %p CD・DVD・BD
-        = f.radio_button :item_type, 1
-      = f.label :type do
-        %p その他
-        = f.radio_button :item_type, 2
-    .form-block
-      %p タイトル
-      = f.text_field :item_name
-    .form-block
-      %p 著者・アーティスト
-      = f.text_field :author
-    .form-block
-      %p 配置本棚
-      = f.select :shelf_id, @shelves
-    %span.input-type 任意情報
-    .form-block
-      %p ジャンル
-      = f.text_field :genre
-    .form-block
-      = f.label :has_read do
-        %p 未読
-        = f.radio_button :has_read, false
-      = f.label :has_read do
-        %p 既読
-        = f.radio_button :has_read, true
-    .form-block
-      = f.label :lend? do
-        %p なし
-        = f.radio_button :lend?, false
-      = f.label :lend? do
-        %p あり
-        = f.radio_button :lend?, true
-    .form-block
-      = f.submit :submit
+.item-registration-wrapper.col-lg-4.mx-auto
+  %h2 アイテム情報登録
+  = form_with model: [@user, @item] do |f|
+    .forms-wrapper
+      .info.border.mt-5.p-2
+        %h4.input-type.text-danger 必須情報
+        .form-block.border-top.p-2
+          %h5 種別
+          .checkbox
+            = f.label :item_type do
+              = f.radio_button :item_type, 0
+              本
+          .checkbox
+            = f.label :type do
+              = f.radio_button :item_type, 1
+              CD・DVD・BD
+          .checkbox
+            = f.label :type do
+              = f.radio_button :item_type, 2
+              その他
+        .form-block.form-group.border-top.p-2
+          = f.label :item_name do 
+            タイトル:
+            = f.text_field :item_name, class: "form-control"
+        .form-block.form-group.border-top.p-2
+          = f.label :author do
+            著者・アーティスト:
+            = f.text_field :author, class: "form-control"
+        .form-block.form-group.border-top.p-2
+          = f.label :shelf_id do
+            配置本棚:
+            = f.select :shelf_id, @shelves, {}, class: "form-control"
+      .info.border.mt-2.p-2
+        %h4.input-type 任意情報
+        .form-block.form-group.border-top.p-2
+          = f.label :genre do
+            ジャンル
+            = f.text_field :genre, class: "form-control"
+        .form-block.border-top.p-2
+          .checkbox
+            = f.label :has_read do
+              = f.radio_button :has_read, false
+              未読
+          .checkbox
+            = f.label :has_read do
+              = f.radio_button :has_read, true
+              既読
+        .form-block.border-top.p-2
+          .checkbox
+            = f.label :lend? do
+              = f.radio_button :lend?, false
+              在宅
+          .checkbox
+            = f.label :lend? do
+              = f.radio_button :lend?, true
+              貸し出し中
+      .form-block.border-top.p-2.mb-5
+        = f.button :submit, type: :submit, class: ["btn", "btn-outline-primary"] do
+          登録する
