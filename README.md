@@ -1,29 +1,5 @@
 # README
 
-<<<<<<< Updated upstream
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
 ## 概要
 本棚と本を登録し、自宅の本を管理できるようにするアプリです。
 現在行えるのは
@@ -49,4 +25,3 @@ Things you may want to cover:
 - 詳細検索
 - 本棚を一般に公開する機能
 - Javascriptを使って表示を洗練させる
->>>>>>> Stashed changes
