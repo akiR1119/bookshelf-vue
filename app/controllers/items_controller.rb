@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :user_setting, only: [:new, :create]
+  # before_action :user_setting, only: [:new, :create]
   #テスト時の記述。ユーザーログイン機能ができたらcurrent_userでidを取得する。
   
   def index
