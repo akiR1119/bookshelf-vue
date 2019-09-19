@@ -1,1 +1,6 @@
-アイテムの全て
+-# 所有するアイテムの全てを表示する
+.items-index-wrapper.p-2.m-2
+  %h2
+    = "#{current_user.name}の所持アイテム一覧"
+  .items-wrapper.col-lg-4.mx-auto.mt-2
+    = render @allitems
