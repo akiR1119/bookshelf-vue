@@ -10,5 +10,6 @@
   %body
     - if user_signed_in?
       = render partial: "shared/header"
-      = render partial: "shared/right-menu"
+      - if controller.controller_name != "home"
+        = render partial: "shared/right-menu"
     = yield
