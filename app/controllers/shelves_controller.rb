@@ -3,7 +3,7 @@ class ShelvesController < ApplicationController
   before_action :user_setting, only: [:new, :create]
 
   def index
-    @shelves = Shelf.where("user_id LIKE(?)", "1")
+    @shelves = Shelf.where("user_id LIKE(?)", current_user.id)
   end
 
   def new
