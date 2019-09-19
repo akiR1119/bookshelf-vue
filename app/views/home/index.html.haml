@@ -1,0 +1,16 @@
+.wrapper.col-lg-6.mx-auto
+  .app-title.mt-5.p-2
+    本棚管理アプリケーション
+    %h1 BookMarkShelf(仮)
+  - if user_signed_in?
+    .user-logged-in.mt-2.p-2.border-top
+    %p
+      = "「#{current_user.name}」さんとしてログイン中です"
+  - else
+    .user-registration.mt-2.p-2.border-top
+      = link_to "ログイン", new_user_session_path, class: "btn btn-outline-primary"
+      = link_to "新規登録", new_user_registration_path, class: "btn btn-outline-primary"
+  .about-app.mt-2.p-2.border-top
+    %p ・自宅にある本棚と本の情報を登録し、管理できます
+    %p ・あの本どこにしまったっけ？　あの本棚何が入ってるけ？　という疑問を解消します
+  .news.mt-2.p-2.border-top

@@ -1,9 +1,10 @@
 .header.container.mt-2
   .row
-    .contents.col-sm
+    .contents.col-sm-6
       = link_to "トップ", "/", class: "btn btn-outline-primary"
       = link_to "My本棚一覧", user_shelves_path(current_user.id), class: "btn btn-outline-primary"
-    .user-session.col-sm
+      = link_to "Myアイテム一覧", user_items_path(current_user.id), class: "btn btn-outline-primary"
+    .user-session.col-sm-3
       - if user_signed_in?
         = link_to "ログアウト", destroy_user_session_path, class: "btn btn-outline-secondary", method: :delete
       - else
