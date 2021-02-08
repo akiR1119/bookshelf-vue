@@ -83,6 +83,6 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
 # for upload images
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'fog-aws'
 gem 'mini_magick'
